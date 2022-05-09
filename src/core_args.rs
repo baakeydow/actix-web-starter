@@ -4,7 +4,7 @@ use clap::Parser;
 #[derive(Parser, Debug)]
 #[clap(author, version, about, long_about = None)]
 pub struct CoreArgs {
-    // Dev mode
+    /// Dev mode
     #[clap(short, long)]
     pub dev: bool,
 
@@ -12,7 +12,7 @@ pub struct CoreArgs {
     #[clap(short, long, default_value_t = 10)]
     pub cron_time: u64,
 
-    // Schedule tick
+    /// Scheduler tick
     #[clap(short, long, default_value = "0 * * * * * *")]
     pub sch_time: String,
 
