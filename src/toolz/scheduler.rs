@@ -22,13 +22,12 @@ fn process_main_task(sch: &Scheduler) {
             .keys()
             .len()
     );
-    let mut_r_data = &mut sch.ref_data.lock().unwrap();
+    let mut_r_data = sch.ref_data.lock().unwrap();
     if mut_r_data.dev_mode == false {
         println!("[ACTIX_CRON]: (BEFORE DELETE) => {:#?}", mut_r_data);
         mut_r_data.arc_map.lock().unwrap().clear();
         println!("[ACTIX_CRON]: ArcMap Cleared !");
     }
-
     println!("[SCHEDULER]: => =========================>");
     println!("[SCHEDULER]: => =========================>");
     println!("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
