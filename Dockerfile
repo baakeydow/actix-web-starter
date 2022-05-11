@@ -1,4 +1,4 @@
-FROM debian:bookworm as builder
+FROM debian:bullseye as builder
 
 ENV RUNTIME_FOLDER=/root/workspace \
     RUSTUP_HOME=/usr/local/rustup \
@@ -18,7 +18,7 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && \
 
 # final docker image
 
-FROM debian:bookworm-slim
+FROM debian:bullseye-slim
 
 ENV RUNTIME_FOLDER=/root/workspace
 
